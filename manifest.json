@@ -1,0 +1,17 @@
+{
+  "name": "Крокодил PWA",
+  "short_name": "Крокодил",
+  "description": "Терминал управления базой Pico Corporation и аннигиляции мутантов",
+  "start_url": "croco.html",
+  "display": "standalone",
+  "background_color": "#0a0f0a",
+  "theme_color": "#00ff41",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/QMLqK7xr/IMG-4794.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
