@@ -1,0 +1,16 @@
+{
+  "name": "СуперСемён VPN",
+  "short_name": "СуперСемён",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/1XPVmYfZ/image.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
