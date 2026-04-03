@@ -1,0 +1,17 @@
+{
+  "name": "Google Gemini",
+  "short_name": "Gemini",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "pwa приложение gemini",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/Lzj20yrH/IMG-4866.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
