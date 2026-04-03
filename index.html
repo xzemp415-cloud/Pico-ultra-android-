@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gemini</title>
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/Lzj20yrH/IMG-4866.jpg">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #131314; /* Цвет фона как у Gemini */
+            color: white;
+            font-family: 'Google Sans', sans-serif, Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .loader {
+            text-align: center;
+        }
+        .countdown {
+            font-size: 1.2rem;
+            color: #8e918f;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader">
+        <h2>Запуск Gemini</h2>
+        <div class="countdown" id="timer">Подождите 5 секунд...</div>
+    </div>
+
+    <script>
+        let seconds = 5;
+        const timerElement = document.getElementById('timer');
+
+        // Обратный отсчет для визуального эффекта
+        const interval = setInterval(() => {
+            seconds--;
+            if (seconds > 0) {
+                timerElement.innerText = `Подождите ${seconds} сек...`;
+            } else {
+                timerElement.innerText = `Переходим...`;
+                clearInterval(interval);
+            }
+        }, 1000);
+
+        // Сам переход через 5000 миллисекунд (5 секунд)
+        setTimeout(() => {
+            window.location.href = "https://gemini.google.com/";
+        }, 5000);
+    </script>
+</body>
+</html>
