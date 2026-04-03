@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gemini PWA</title>
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/Lzj20yrH/IMG-4866.jpg">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #131314;
+            color: white;
+            font-family: 'Google Sans', sans-serif, Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .instruction {
+            padding: 20px;
+        }
+        /* Скрываем инструкцию, если приложение запущено в режиме PWA */
+        @media (display-mode: standalone) {
+            .instruction {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="status" class="instruction">
+        <h2>Gemini App</h2>
+        <p>Чтобы запустить, добавьте этот сайт <br> на экран «Домой»</p>
+    </div>
+
+    <script>
+        function launchApp() {
+            // Проверяем, запущено ли приложение как PWA (на iOS и Android)
+            const isStandalone = window.matchMedia('(display-mode: standalone)').matches 
+                                 || window.navigator.standalone 
+                                 || document.referrer.includes('android-app://');
+
+            if (isStandalone) {
+                // Если это PWA — перекидываем мгновенно
+                window.location.replace("https://gemini.google.com/");
+            } else {
+                // Если открыто просто в браузере — ничего не делаем, 
+                // пользователь видит надпись "Добавьте на экран Домой"
+                console.log("Запущено в обычном браузере. Ожидание установки.");
+            }
+        }
+
+        // Запускаем проверку сразу
+        launchApp();
+    </script>
+</body>
+</html>
